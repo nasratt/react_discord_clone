@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from 'react-router-dom';
+import Login from './Pages/Login';
 
 const App = () => {
-  return <div className="text-3xl underline">Hello World!</div>;
+  const [user, setUser] = useState();
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={user && <div>Hello</div>} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
