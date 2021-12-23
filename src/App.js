@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={user && <div>Hello</div>} />
+        <Route exact path="/" element={!user && <div>Hello</div>} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
